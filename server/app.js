@@ -8,12 +8,13 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var chinelosRouter = require('./routes/chinelos');
 var sandaliasRouter = require('./routes/sandalias');
+var cachorrosRouter = require('./routes/cachorros');
 
 var app = express();
 
 // view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views')); // express server --view=ejs
+app.set('view engine', 'ejs'); // express server --view=ejs
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -25,6 +26,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/chinelos', chinelosRouter);
 app.use('/sandalias', sandaliasRouter);
+app.use('/cachorros', cachorrosRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
